@@ -19,10 +19,36 @@ app.use(cors());
 
 // create connection to the MySQL database
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'test_sample',
+  host: 'pscprime.com',
+  user: 'pscprim1_interns',
+  password: 'interns@2019',
+  database: 'pscprim1_health_insurance',
 });
+
+/**
+ * database tables
+ * - contributions
+ *   - beneficiaryNo
+ *   - hospitalNo
+ *   - occupation
+ *   - amount
+ * - beneficiaries
+ *   - beneficiaryNo
+ *   - name
+ *   - address
+ *   - phone
+ *   - occupation
+ *   - age
+ *   - hospital
+ *   - gender
+ * - hospitals
+ *   - hcfNo
+ *   - hcfName
+ *   - address
+ *   - phone
+ *   - contactPerson
+ *   - email
+ */
 
 // routes starts here
 app.get('/', (req, res) => {
@@ -50,4 +76,4 @@ app.post('/users/new', (req, res) => {
 });
 
 // listen for the app
-app.listen(4000, () => console.log('App is running on port 4000'));
+app.listen(4001, () => console.log('App is running on port 4000'));
